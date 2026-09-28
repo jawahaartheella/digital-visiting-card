@@ -397,37 +397,45 @@ main {
 
 .download-menu {
     position: absolute;
-    top: -85px;
+    bottom: 100%;
+    left: 0;
+
     display: flex;
     width: 100%;
     flex-direction: column;
+
     border: 1px solid rgba(157, 123, 73, 0.5);
     border-bottom: 0;
+
+    pointer-events: none;
     opacity: 0;
+    transform: translateY(11px);
     transition: all 0.3s ease-in-out;
 }
 
 .download-menu.show {
-    top: -99px;
-    opacity: 100%;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
 }
 
 .download-menu .menu-btn {
-    padding: 16px;
+    padding: 20px;
     background-color: #151817;
     color: #c8aa74;
+    
+    font-size: clamp(10px, 2.5vw, 14px);
+    white-space: nowrap;
+
     border: 0;
-    opacity: 80%;
     border-bottom: 1px solid rgba(157, 123, 73, 0.5);
+    
+    opacity: 80%;
     cursor: pointer;
 }
 
 .download-menu .menu-btn:hover {
     background-color: rgba(157, 123, 73, 0.1);
-}
-
-.download-menu .menu-btn:last-child {
-    border-bottom: 0;
 }
 
 .footer-text {
